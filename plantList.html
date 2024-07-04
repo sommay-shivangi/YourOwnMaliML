@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>YourOwnMali - Plant</title>
+    <!-- Favicon -->
+    <link rel="icon" href="logoIT.png">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img">
+            <img src="loader.jpg" alt="">
+        </div>
+    </div>
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- ***** Top Header Area ***** -->
+        <div class="top-header-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="top-header-content d-flex align-items-center justify-content-between">
+                            <!-- Top Header Content -->
+                            <div class="top-header-meta">
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: sommayinps@gmail.com</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +91 9500000001</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Navbar Area ***** -->
+        <div class="alazea-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- menu -->
+                    <nav class="classy-navbar justify-content-between" id="alazeaNav">
+                        <!-- Nav Brand -->
+                        <a href="index.html" class="nav-brand"><img src="logoIT.png" alt=""></a>                        
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span>
+                        </div>                        
+                        <!-- Menu -->
+                        <div class="classy-menu">
+                            <!-- Navbar Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="plantList.html">Plants</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="cycle.html">LifeCycle</a></li>
+                                </ul>
+                                <!-- Search Icon -->
+                                <div id="searchIcon">
+                                    <i class="fa fa-search" aria-hidden="true"></i>                                    
+                                    <script>
+                                        function getUrlParameter(name) {
+                                            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                                            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                                            var results = regex.exec(location.search);
+                                            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+                                        }
+                                        fetch('plantDetail.json')
+                                            .then(response => response.json())
+                                            .then(data => {
+                                                const originalPlants = data.plants;
+                                                function renderPlants(plants) {
+                                                    plantsContainer.innerHTML = '';
+                                                    plants.forEach(plant => {
+                                                        const plantDiv = document.createElement('div');
+                                                        plantDiv.classList.add('col-12', 'col-md-4', 'mb-4');
+                                                        plantDiv.innerHTML = `
+                                                            <div class="single-plant">
+                                                                <img src="${plant.image_url}" alt="${plant.common_name}" class="plant-image">
+                                                                <div class="plant-info">
+                                                                    <h3>${plant.common_name}</h3>
+                                                                    <p><strong>Scientific Name:</strong> ${plant.scientific_name}</p>
+                                                                    <p><strong>Watering Habit:</strong> ${plant.watering_habit}</p>
+                                                                    <p><strong>Sunlight Requirement:</strong> ${plant.sunlight_requirement}</p>
+                                                                    <p><strong>Indoor/Outdoor:</strong> ${plant.indoor_outdoor}</p>
+                                                                    <p><strong>Location:</strong> ${plant.location}</p>
+                                                                    <p>${plant.description}</p>
+                                                                    <p><strong>Benefit:</strong> ${plant.benefit}</p>
+                                                                </div>
+                                                            </div>
+                                                        `;
+                                                        plantsContainer.appendChild(plantDiv);
+                                                    });
+                                                }
+                                                const plantsContainer = document.getElementById('plants-list');
+                                                renderPlants(originalPlants);
+                                                function handleSearch(event) {
+                                                    event.preventDefault();                           
+                                                    const searchTerm = event.target.value.toLowerCase();
+                                                    const filteredPlants = originalPlants.filter(plant =>
+                                                        plant.common_name.toLowerCase().includes(searchTerm) ||
+                                                        plant.scientific_name.toLowerCase().includes(searchTerm) ||
+                                                        plant.location.toLowerCase().includes(searchTerm)
+                                                    );
+                                                    renderPlants(filteredPlants);
+                                                }
+                                                const searchInput = document.getElementById('search');
+                                                searchInput.addEventListener('input', handleSearch);
+                                                const searchForm = document.getElementById('searchForm');
+                                                searchForm.addEventListener('submit', handleSearch);
+                                            })
+                                            .catch(error => console.error('Error fetching plants data:', error));
+                                    </script>
+                                    <script>
+                                        fetch('plants.json')
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            const originalPlants = data.plants;
+                                            function renderPlants(plants) {
+                                                plantsContainer.innerHTML = '';
+                                                plants.forEach(plant => {
+                                                    const plantDiv = document.createElement('div');
+                                                    plantDiv.classList.add('col-12', 'col-md-4', 'mb-4');  
+                                                    plantDiv.innerHTML = `
+                                                    <div class="single-plant">
+                                                        <img src="${plant.image_url}" alt="${plant.common_name}" class="plant-image">
+                                                        <div class="plant-info">
+                                                            <h3>${plant.common_name}</h3>
+                                                            <p><strong>Scientific Name:</strong> ${plant.scientific_name}</p>
+                                                            <p><strong>Watering Habit:</strong> ${plant.watering_habit}</p>
+                                                            <p><strong>Sunlight Requirement:</strong> ${plant.sunlight_requirement}</p>
+                                                            <p><strong>Indoor/Outdoor:</strong> ${plant.indoor_outdoor}</p>
+                                                            <p><strong>Location:</strong> ${plant.location}</p>
+                                                            <p>${plant.description}</p>
+                                                            <p><strong>Benefit:</strong> ${plant.benefit}</p>
+                                                        </div>
+                                                    </div>
+                                                `;
+                                                plantsContainer.appendChild(plantDiv);
+                                            });
+                                        }
+                                        const plantsContainer = document.getElementById('plants-list');
+                                        renderPlants(originalPlants);
+                                        function handleSearch(event) {
+                                            const searchTerm = event.target.value.toLowerCase();
+                                            const filteredPlants = originalPlants.filter(plant =>
+                                            plant.common_name.toLowerCase().includes(searchTerm) ||
+                                            plant.scientific_name.toLowerCase().includes(searchTerm) ||
+                                            plant.location.toLowerCase().includes(searchTerm)
+                                        );
+                                        renderPlants(filteredPlants);
+                                        }
+                                        const searchInput = document.getElementById('search');
+                                        searchInput.addEventListener('input', handleSearch);
+                                        })
+                                        .catch(error => console.error('Error fetching plants data:', error));
+                                    </script>
+
+                                </div>
+                            <!-- Navbar End -->
+                        </div>
+                    </nav>
+                    <!-- Search Form -->
+                    <div class="search-form">
+                        <form action="#" method="get">
+                            <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
+                            <button type="submit" class="d-none"></button>
+                        </form>
+                        <!-- Close Icon -->
+                        <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>                        
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+    <!-- ##### Breadcrumb Area Start ##### -->
+    <div class="breadcrumb-area">
+        <!-- Top Breadcrumb Area -->
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(bg2.jpg);">
+            <h2>PLANTS</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Plants</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcrumb Area End ##### -->
+    <!-- ##### Plants Section Start ##### -->
+    <section class="plants-section">
+        <div class="container">
+            <div class="row" id="plants-list">
+            <!-- Plants will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+<!-- ##### Plants Section End ##### -->
+<script>
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+    fetch('plantDetail.json')
+        .then(response => response.json())
+        .then(data => {
+            const searchQuery = getUrlParameter('search').toLowerCase();
+            const filteredPlants = data.plants.filter(plant =>
+                plant.common_name.toLowerCase().includes(searchQuery) ||
+                plant.scientific_name.toLowerCase().includes(searchQuery)
+            );
+
+            const plantsContainer = document.getElementById('plants-list');
+            plantsContainer.innerHTML = '';
+            filteredPlants.forEach(plant => {
+                const plantDiv = document.createElement('div');
+                plantDiv.classList.add('col-12', 'col-md-4', 'mb-4');
+                plantDiv.innerHTML = `
+                    <div class="single-plant">
+                        <img src="${plant.image_url}" alt="${plant.common_name}" class="plant-image">
+                        <div class="plant-info">
+                            <h3>${plant.common_name}</h3>
+                            <p><strong>Scientific Name:</strong> ${plant.scientific_name}</p>
+                            <p><strong>Watering Habit:</strong> ${plant.watering_habit}</p>
+                            <p><strong>Sunlight Requirement:</strong> ${plant.sunlight_requirement}</p>
+                            <p><strong>Indoor/Outdoor:</strong> ${plant.indoor_outdoor}</p>
+                            <p><strong>Location:</strong> ${plant.location}</p>
+                            <p>${plant.description}</p>
+                            <p><strong>Benefit:</strong> ${plant.benefit}</p>
+                        </div>
+                    </div>
+                `;
+                plantsContainer.appendChild(plantDiv);
+            });
+            document.querySelector('.preloader').style.display = 'none';
+        })
+        .catch(error => {
+            console.error('Error fetching plants data:', error);
+            document.querySelector('.preloader').style.display = 'none';
+        });
+</script>
+<!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area bg-img" style="background-image: url(img/bg-img/3.jpg);">
+        <!-- Main Footer Area -->
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-logo mb-30">
+                                <img src="logoIT.png" alt="logo">
+                            </div>
+                                <div class="social-info">
+                                <a href="https://m.facebook.com/profile.php/?id=100008827024438"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/ShivangiSommay"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.instagram.com/sommay.shivangi?igsh=cm41bDUyMDIzeWpt"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/in/sommay-shivangi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                        </div>
+                    </div>
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h5>CONTACT</h5>
+                            </div>
+                            <div class="contact-information">
+                                <p><span>Address:</span> MS Park, Delhi</p>
+                                <p><span>Phone:</span>+91 9500000001</p>
+                                <p><span>Email:</span> sommayinps@gmail.com</p>
+                                <p><span>Open hours:</span> Mon - Fri: 10 AM to 7 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom Area -->
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="border-line"></div>
+                    <div class="col-12 col-md-6">
+                    </div>
+                    <!-- Footer Nav -->
+                    <div class="col-12 col-md-6">
+                        <div class="footer-nav">
+                            <nav>
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="plantList.html">Plants</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="cycle.html">LifeCycle</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+</body>
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+    <!-- Title -->
+    <title>YourOwnMali</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="logoIT.png">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img">
+            <img src="loader.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- ***** Top Header Area ***** -->
+        <div class="top-header-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="top-header-content d-flex align-items-center justify-content-between">
+                            <!-- Top Header Content -->
+                            <div class="top-header-meta">
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: sommayinps@gmail.com</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +91 9500000001</span></a>
+                            </div>
+
+                            <!-- Top Header Content -->
+                            <div class="top-header-meta d-flex">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ***** Navbar Area ***** -->
+        <div class="alazea-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="alazeaNav">
+
+                        <!-- Nav Brand -->
+                        <a href="index.html" class="nav-brand"><img src="logoIT.png" alt=""></a>
+
+                         <!-- Navbar Toggler -->
+                         <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+
+                            <!-- Navbar Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="plantList.html">Plants</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="cycle.html">LifeCycle</a></li>
+                                </ul>
+
+                                <!-- Search Icon -->
+                                <div id="searchIcon">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    <script>
+                                        
+                                        function handleSearch(event) {
+                                            const searchTerm = event.target.value.toLowerCase();
+                                            window.location.href = `plantList.html?search=${searchTerm}`;
+                                        }
+                                        const searchInput = document.getElementById('search');
+                                        searchInput.addEventListener('input', handleSearch);
+
+                                    </script>
+                                </div>
+                            </div>
+                            <!-- Navbar End -->
+                        </div>
+                    </nav>
+
+                    <!-- Search Form -->
+                    <div class="search-form">
+                        <form id="searchForm" action="#" method="get">
+                            <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
+                            <button type="submit" class="d-none"></button>
+                        </form>
+                        <!-- Close Icon -->
+                        <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+                                         
+    <!-- ##### Header Area End ##### -->
+
+
+    <!-- fetch plant -->
+    <script>
+        // Handling the search form submission
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            var searchValue = document.getElementById('search').value.trim();
+            if(searchValue) {
+                // Redirect to plantList.html with the search term
+                window.location.href = `plantList.html?search=${encodeURIComponent(searchValue)}`;
+            }
+        });
+    </script>
+
+
+    <!-- ##### Hero Area Start ##### -->
+    <section class="hero-area">
+        <div class="hero-post-slides owl-carousel">
+
+            <!-- Single Hero Post -->
+            <div class="single-hero-post bg-overlay">
+                <!-- Post Image -->
+                <div class="slide-img bg-img" style="background-image: url(hanging-plants.jpg);"></div>
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <!-- Post Content -->
+                            <div class="hero-slides-content text-center">
+                                <h2><em>To plant a garden is to believe in tomorrow.</em></h2>
+                                <p>- Audrey Hepburn</p>
+                                <div class="welcome-btn-group">
+                                    <a href="plantList.html" class="btn alazea-btn mr-30">GET STARTED</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Hero Area End ##### -->
+
+    <!-- ##### Service Area Start ##### -->
+    <section class="our-services-area bg-gray section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Section Heading -->
+                    <div class="section-heading text-center">
+                        <h2>WHAT WE PROVIDE YOU</h2>
+                        <p><em> ~The perfect knowledge</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center justify-content-between">
+                <div class="col-12 col-lg-5">
+                    <div class="alazea-service-area mb-100">
+
+                        <!-- Single Service Area -->
+                        <div class="single-service-area d-flex align-items-center">
+                            <!-- Icon -->
+                            <div class="service-icon mr-30">
+                                <img src="img/core-img/s2.png"alt="">
+                            </div>
+                            <!-- Content -->
+                            <div class="service-content">
+                                <h5>Plant Care</h5>
+                                <p>Learn tips and tricks on plant care with our plant care guide, ensuring your plants thrive in any environment!</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Service Area -->
+                        <div class="single-service-area d-flex align-items-center">
+                            <!-- Icon -->
+                            <div class="service-icon mr-30">
+                                <img src="img/core-img/s1.png"  alt="">
+                            </div>
+                            <!-- Content -->
+                            <div class="service-content">
+                                <h5>Location Wise Distribution</h5>
+                                <p>Discover a diverse selection of plants, categorized by location, such as North India, South India, and more, to enhance your living space with greenery.</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Service Area -->
+                        <div class="single-service-area d-flex align-items-center">
+                            <!-- Icon -->
+                            <div class="service-icon mr-30">
+                                <img src="img/core-img/s3.png" alt="">
+                            </div>
+                            <!-- Content -->
+                            <div class="service-content">
+                                <h5>Plant Benefits</h5>
+                                <p>Uncover the myriad benefits of plants, from air purification to mood enhancement. Discover how incorporating plants into your space can transform it into a healthier, happier environment.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="alazea-video-area bg-overlay mb-100">
+                        <img src="yt.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Service Area End ##### -->
+
+
+    <!-- ##### Portfolio Area Start ##### -->
+    <section class="alazea-portfolio-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Section Heading -->
+                    <div class="section-heading text-center">
+                        <h2>PLANTS</h2>
+                        <p>We got your back with 100+ varieties of plants.<p> Either search them manually, or apply a filter of your location for better results.</p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+        <form id="locationForm" action="plantList.html" method="get">
+            <input type="text" name="inLocation" id="loc" placeholder="Please Enter Your state">
+            <button type="submit" class="d-none"></button>
+        </form>
+        
+        </div>
+    </div>
+        </div>
+    </section>
+    <!-- ##### Portfolio Area End ##### -->
+
+
+<!-- ##### Blog Area Start ##### -->
+<section class="alazea-blog-area section-padding-100-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Section Heading -->
+                <div class="section-heading text-center">
+                    <h2>INTERESTING BLOGS</h2>
+                    <!-- <p>The breaking news about Gardening &amp; House plants</p> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <!-- Single Blog Post Area -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-blog-post mb-100">
+                    <div class="post-thumbnail mb-30">
+                        <a href="single-post.html"><img src="blog1.jpg" alt=""></a>
+                    </div>
+                    <div class="post-content">
+                        <a href="single-post.html" class="post-title">
+                            <h5>Meet Sanjeevani: A Plant That's as Legendary as Ramayana itself</h5>
+                        </a>
+                        <div class="post-meta">
+                            <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> 08 Oct 2023</a>
+                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Anonymous</a>
+                        </div>
+                        <p class="post-excerpt">Ever heard of a plant so legendary, it's said to bring back the dead? No, we're not talking about a prop from a sci-f...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Blog Post Area -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-blog-post mb-100">
+                    <div class="post-thumbnail mb-30">
+                        <a href="single-post-blog2.html"><img src="blog2.jpeg" alt=""></a>
+                    </div>
+                    <div class="post-content">
+                        <a href="single-post-blog2.html" class="post-title">
+                            <h5>How Houseplants can Help Boost Your Mood and Fight Sadness</h5>
+                        </a>
+                        <div class="post-meta">
+                            <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> 07 Jan 2024</a>
+                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Self-Care</a>
+                        </div>
+                        <p class="post-excerpt">Houseplants offer a myriad of benefits beyond their positive impact on mental health. Here are some additio...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Blog Post Area -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-blog-post mb-100">
+                    <div class="post-thumbnail mb-30">
+                        <a href="single-post-blog3.html"><img src="blog3.jpg" alt=""></a>
+                    </div>
+                    <div class="post-content">
+                        <a href="single-post-blog3.html" class="post-title">
+                            <h5>The Symbolic Meaning Behind Gifting Plants</h5>
+                        </a>
+                        <div class="post-meta">
+                            <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>24 Mar 2024</a>
+                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i>Anonymous</a>
+                        </div>
+                        <p class="post-excerpt">The art of gifting! It's always a pleasure to receive a thoughtful present, but have you ever considered the symbolic meaning behind gifting plants?</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ##### Blog Area End ##### -->
+
+
+<!-- ##### About Area Start ##### -->
+<section class="about-us-area">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-12 col-lg-5">
+                <!-- Section Heading -->
+                <div class="section-heading">
+                    <h2>ABOUT US</h2>
+                </div>
+                <p>We are leading in the plants service fields.</p>
+                <p> We're here to help you grow your passion for gardening!</p>
+                <!-- Progress Bar Content Area -->
+                <div class="alazea-progress-bar mb-50">
+                <!-- Single Progress Bar -->
+                <div class="single_progress_bar">
+                    <p>Indoor plants</p>
+                        <div id="bar1" class="barfiller">
+                            <div class="tipWrap">
+                                <span class="tip"></span>
+                            </div>
+                                <span class="fill" data-percentage="37"></span>
+                        </div>
+                </div>
+
+                <!-- Single Progress Bar -->
+                <div class="single_progress_bar">
+                    <p>Outdoor plants</p>
+                        <div id="bar2" class="barfiller">
+                            <div class="tipWrap">
+                                <span class="tip"></span>
+                            </div>
+                                <span class="fill" data-percentage="80"></span>
+                        </div>
+                </div>
+
+                <!-- Single Progress Bar -->
+                <div class="single_progress_bar">
+                    <p>Medicinal Plants</p>
+                    <div id="bar3" class="barfiller">
+                        <div class="tipWrap">
+                                    <span class="tip"></span>
+                                </div>
+                                <span class="fill" data-percentage="60"></span>
+                            </div>
+                        </div>
+
+                        <!-- Single Progress Bar -->
+                        <div class="single_progress_bar">
+                            <p>Flower Plants</p>
+                            <div id="bar4" class="barfiller">
+                                <div class="tipWrap">
+                                    <span class="tip"></span>
+                                </div>
+                                <span class="fill" data-percentage="55"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="alazea-benefits-area">
+                        <div class="row">
+                           
+                            <div class="col-12 col-sm-6">
+                                <div class="single-benefits-area">
+                                    <img src="img/core-img/b3.png"alt="">
+                                    <h5>Our Mission</h5>
+                                    <p>Learn about our dedication to promote gardening practices and providing advice to help you create and maintain your dream garden.</p>
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-12 col-sm-6">
+                                <div class="single-benefits-area">
+                                    <img src="img/core-img/b2.png" alt="">
+                                    <h5>Blog Post</h5>
+                                    <p>Discover our monthly-changing blog, offering interesting and informative content on plants and gardening.</p>
+                                </div>
+                            </div>
+
+                           
+                            <div class="col-12 col-sm-6">
+                                <div class="single-benefits-area">
+                                    <img src="img/core-img/b1.png" alt="">
+                                    <h5>Fun Section</h5>
+                                    <p>Engage in interactive fun with our plant life cycle activity, where you can tap to explore and learn about the fascinating journey of plants from seed to bloom.</p>
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-12 col-sm-6">
+                                <div class="single-benefits-area">
+                                    <img src="img/core-img/b4.png" alt="">
+                                    <h5>Contact Us</h5>
+                                    <p>Get in touch with us to ask questions, provide feedback, or inquire about partnership opportunities.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="border-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### About Area End ##### -->
+    
+
+    <!-- ##### Contact Area Start ##### -->
+    <section class="contact-area section-padding-100-0">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-12 col-lg-5">
+                    <!-- Section Heading -->
+                    <div class="section-heading">
+                        <h2>GET IN TOUCH</h2>
+                        <p>We will get back to you!</p>
+                    </div>
+                    <!-- Contact Form Area -->
+                    <div class="contact-form-area mb-100">
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                            <div class="row">
+                                <input type="hidden" name="access_key" value="13a0ad7c-7ba1-45e9-9336-4c8195b69111">
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="contact-name" placeholder="Your Name" name="name">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="contact-email" placeholder="Your Email" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="contact-subject" placeholder="Subject" name="subject">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn alazea-btn mt-15">Send Message</button>
+                                </div>
+                            </div>
+                            </form>
+
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <!-- Google Maps -->
+                    <div class="map-area mb-100">
+                        <a href = "https://maps.app.goo.gl/J8KMFcQwLAVcx3tm9" target="_blank"></a>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3980.751688164206!2d77.2295594751564!3d28.664313809601115!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd96254a0045%3A0xeb1e1553e3d72faf!2sIGDTUW%20Delhi!5e0!3m2!1sen!2sin!4v1712833214517!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Contact Area End ##### -->
+
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area bg-img" style="background-image: url(img/bg-img/3.jpg);">
+        <!-- Main Footer Area -->
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-logo mb-30">
+                                <img src="logoIT.png" alt="logo">
+                            </div>
+                                <div class="social-info">
+                                    <a href="https://m.facebook.com/profile.php/?id=100008827024438"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                    <a href="https://twitter.com/ShivangiSommay"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    <a href="https://www.instagram.com/sommay.shivangi?igsh=cm41bDUyMDIzeWpt"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    <a href="https://www.linkedin.com/in/sommay-shivangi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h5>CONTACT</h5>
+                            </div>
+
+                            <div class="contact-information">
+                                <p><span>Address:</span> MS Park, Delhi</p>
+                                <p><span>Phone:</span>+91 9500000001</p>
+                                <p><span>Email:</span> sommayinps@gmail.com</p>
+                                <p><span>Open hours:</span> Mon - Fri: 10 AM to 7 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Area -->
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="border-line"></div>
+                    <div class="col-12 col-md-6">
+                    </div>
+                    <!-- Footer Nav -->
+                    <div class="col-12 col-md-6">
+                        <div class="footer-nav">
+                            <nav>
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="plantList.html">Plants</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="cycle.html">LifeCycle</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchForm = document.getElementById('searchForm'); 
+            searchForm.addEventListener('submit', function(event) {
+                event.preventDefault(); 
+                const searchInput = document.getElementById('search'); 
+                const searchTerm = searchInput.value.trim();
+                if(searchTerm) {
+                    
+                    window.location.href = `plantList.html?search=${encodeURIComponent(searchTerm)}`;
+                }
+            });
+        });
+    </script>
+
+<script>
+    document.getElementById("locationForm").addEventListener("submit", function(event) {
+      console.log("Form submitted!");
+    
+     
+      const location = document.getElementById("loc").value.trim().toLowerCase();
+      console.log("Entered location:", location);
+    
+    
+      if (!location) {
+        alert("Please enter a location to filter plants.");
+        return;
+      }
+      let filteredPlants;
+      filteredPlants = plants.filter(plant => {
+        console.log("Checking plant:", plant);
+        console.log("  - location:", plant.location);
+        return plant.location.toLowerCase() === location;
+      });
+    
+      console.log("Filtered plants:", filteredPlants);
+      if (filteredPlants.length === 0) {
+        alert("No plants found for location: " + location);
+      }
+      window.location.href = "plantList.html";
+    
+    });
+    
+    
+    </script>  
+
+    
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+</body>
+
+</html>

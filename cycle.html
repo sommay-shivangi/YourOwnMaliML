@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>YourOwnMali - About Us</title>
+    <!-- Favicon -->
+    <link rel="icon" href="logoIT.png">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img">
+            <img src="loader.jpg" alt="">
+        </div>
+    </div>
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- ***** Top Header Area ***** -->
+        <div class="top-header-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="top-header-content d-flex align-items-center justify-content-between">
+                            <!-- Top Header Content -->
+                            <div class="top-header-meta">
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: sommayinps@gmail.com</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +91 9500000001</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Navbar Area ***** -->
+        <div class="alazea-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="alazeaNav">
+                        <!-- Nav Brand -->
+                        <a href="index.html" class="nav-brand"><img src="logoIT.png" alt=""></a>
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span>
+                        </div>
+                        <!-- Menu -->
+                        <div class="classy-menu">
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+                            <!-- Navbar Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="plantList.html">Plants</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="cycle.html">Life Cycle</a></li>
+                                </ul>
+                               </div>
+                            <!-- Navbar End -->
+                        </div>
+                    </nav>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+    <!-- ##### Breadcrumb Area Start ##### -->
+    <div class="breadcrumb-area">
+        <!-- Top Breadcrumb Area -->
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(bg2.jpg);">
+            <h2>Life Cycle</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Life Cycle</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcrumb Area End ##### -->
+    <!-- Images area start -->
+    <section class="blog-content-area section-padding-0-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Blog Posts Area -->
+                <div class="col-12 col-md-8">
+                    <div class="blog-posts-area">
+                        <!-- Post Details Area -->
+                        <div class="single-post-details-area">
+                            <div class="post-content">
+                                <h4 class="post-title">The life cycle of Mango Tree</h4>
+                                <div><img src="img/core-img/can.png.png" alt="Watering Can" id="cycleButton"></div>
+                                <div id="imageContainer">
+                                    <img src="img/core-img/start.jpg" alt="seed extraction" id="lifecycleImage">
+                                    <p id="description">Take the mango kernel</p>
+                                </div>                               
+                                <script>
+                                    var images = ["img/core-img/start.jpg", "img/core-img/seed.jpg", "img/core-img/third.jpg", "img/core-img/fourth.jpg", "img/core-img/fifth.jpg", "img/core-img/tree.jpg"];
+                                    var descriptions = ["Take the mango kernel", "Cut it and extract the mango seed", "Wrap in moisture for two days, then sow it in soil", "Water it and watch the beautiful seedling grow", "Let it grow into a plant", "Boom! We have our tree now! Have some mangoes"];
+                                    var index = 0;                                
+                                    document.getElementById("cycleButton").addEventListener("click", function() {
+                                        index = (index + 1) % images.length;
+                                        document.getElementById("lifecycleImage").style.opacity = 0;
+                                        setTimeout(function() {
+                                            document.getElementById("lifecycleImage").src = images[index];
+                                            document.getElementById("description").textContent = descriptions[index];
+                                            document.getElementById("lifecycleImage").style.opacity = 1;
+                                        }, 500);
+                                        if (index === images.length) {
+                                            index = -1;
+                                        }
+                                    });
+                                </script>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>   
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area bg-img" style="background-image: url(img/bg-img/3.jpg);">
+        <!-- Main Footer Area -->
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-logo mb-30">
+                                <img src="logoIT.png" alt="logo">
+                            </div>
+                                <div class="social-info">
+                                    <a href="https://m.facebook.com/profile.php/?id=100008827024438"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                    <a href="https://twitter.com/ShivangiSommay"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    <a href="https://www.instagram.com/sommay.shivangi?igsh=cm41bDUyMDIzeWpt"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    <a href="https://www.linkedin.com/in/sommay-shivangi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                        </div>
+                    </div>
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h5>CONTACT</h5>
+                            </div>
+                            <div class="contact-information">
+                                <p><span>Address:</span> MS Park, Delhi</p>
+                                <p><span>Phone:</span>+91 9500000001</p>
+                                <p><span>Email:</span> sommayinps@gmail.com</p>
+                                <p><span>Open hours:</span> Mon - Fri: 10 AM to 7 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom Area -->
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="border-line"></div>
+                    <div class="col-12 col-md-6">
+                    </div>
+                    <!-- Footer Nav -->
+                    <div class="col-12 col-md-6">
+                        <div class="footer-nav">
+                            <nav>
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="plantList.html">Plants</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="cycle.html">LifeCycle</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+</body>
+</html>
